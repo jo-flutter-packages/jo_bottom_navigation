@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:jo_bottom_navigation/jo_bottom_navigation.dart';
 
 class JOBottomNavigationItem extends StatelessWidget {
-  const JOBottomNavigationItem({
+  JOBottomNavigationItem({
     Key? key,
     required this.icon,
-    required this.route,
+    this.route,
     required this.callback,
     this.visible,
     this.enable,
   }) : super(key: key);
   final IconData icon;
-  final String route;
+  String? route;
   final Function() callback;
   final bool? visible;
   final bool? enable;
@@ -46,7 +46,9 @@ class JOBottomNavigationItem extends StatelessWidget {
                   : () {
                       joNavigationCurrentRoute = route;
                       callback.call();
-                      Navigator.of(context).pushNamed(route);
+                      if (route != null && route!.isNotEmpty) {
+                        Navigator.of(context).pushNamed(route ?? "");
+                      }
                     },
             ),
           )
