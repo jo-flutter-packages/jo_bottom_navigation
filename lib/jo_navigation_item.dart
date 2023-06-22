@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jo_bottom_navigation/jo_bottom_navigation.dart';
 
-class JONavigationItem extends StatelessWidget {
-  const JONavigationItem({
+class JOBottomNavigationItem extends StatelessWidget {
+  const JOBottomNavigationItem({
     Key? key,
     required this.icon,
     required this.route,

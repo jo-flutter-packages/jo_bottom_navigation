@@ -5,20 +5,20 @@ import 'jo_navigation_item.dart';
 
 String? joNavigationCurrentRoute;
 
-class JONavigation extends StatefulWidget {
-  const JONavigation({
+class JOBottomNavigation extends StatefulWidget {
+  const JOBottomNavigation({
     Key? key,
     this.rtl = true,
     required this.items,
   }) : super(key: key);
   final bool rtl;
-  final List<JONavigationItem> items;
+  final List<JOBottomNavigationItem> items;
 
   @override
-  State<JONavigation> createState() => _JONavigationState();
+  State<JOBottomNavigation> createState() => _JOBottomNavigationState();
 }
 
-class _JONavigationState extends State<JONavigation> {
+class _JOBottomNavigationState extends State<JOBottomNavigation> {
   @override
   void initState() {
     super.initState();
