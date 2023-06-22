@@ -1,7 +1,8 @@
 name: jo_bottom_navigation
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+publish_to: none
+homepage: https://github.com/jo-flutter-packages/jo_bottom_navigation.git
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
