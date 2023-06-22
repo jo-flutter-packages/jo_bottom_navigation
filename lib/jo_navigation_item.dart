@@ -23,7 +23,7 @@ class JOBottomNavigationItem extends StatelessWidget {
             height: 60.0,
             width: 65.0,
             decoration: BoxDecoration(
-              color: joNavigationCurrentRoute != route
+              color: joNavigationCurrentRoute != route && route != null
                   ? null
                   : Theme.of(context).cardColor,
               borderRadius: BorderRadius.circular(20.0),
@@ -34,7 +34,7 @@ class JOBottomNavigationItem extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               icon: Icon(
                 icon,
-                color: joNavigationCurrentRoute == route
+                color: joNavigationCurrentRoute == route && route != null
                     ? null
                     : visible == false || enable == false
                         ? Theme.of(context).disabledColor
@@ -44,7 +44,7 @@ class JOBottomNavigationItem extends StatelessWidget {
               onPressed: visible == false || enable == false
                   ? null
                   : () {
-                      joNavigationCurrentRoute = route;
+                      if (route != null) joNavigationCurrentRoute = route;
                       callback.call();
                       if (route != null && route!.isNotEmpty) {
                         Navigator.of(context).pushNamed(route ?? "");
