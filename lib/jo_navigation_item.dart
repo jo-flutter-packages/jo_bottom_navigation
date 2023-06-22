@@ -23,9 +23,11 @@ class JOBottomNavigationItem extends StatelessWidget {
             height: 60.0,
             width: 65.0,
             decoration: BoxDecoration(
-              color: joNavigationCurrentRoute != route && route != null
+              color: joNavigationCurrentRoute != route
                   ? null
-                  : Theme.of(context).cardColor,
+                  : route != null
+                      ? Theme.of(context).cardColor
+                      : null,
               borderRadius: BorderRadius.circular(20.0),
             ),
             margin: const EdgeInsets.all(10.0),
